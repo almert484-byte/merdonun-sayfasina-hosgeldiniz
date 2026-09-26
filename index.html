@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sadece Senin İçin...</title>
+    <title>Özel Sayfa</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -86,11 +86,6 @@
             border-color: #ff6b81;
             box-shadow: 0 0 15px rgba(255, 107, 129, 0.2);
         }
-        .btn-group {
-            display: flex;
-            gap: 12px;
-            margin-top: 10px;
-        }
         button {
             width: 100%;
             padding: 16px;
@@ -104,62 +99,14 @@
             box-shadow: 0 10px 20px rgba(255, 107, 129, 0.3);
             transition: all 0.3s ease;
         }
-        button.btn-secondary {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            box-shadow: none;
-            color: #a0a0ab;
-        }
         .error-message {
             color: #ff4757;
             font-size: 0.85rem;
             margin-top: 15px;
             display: none;
         }
-        #step2Card {
+        #elifStep1Card, #elifStep2Card {
             display: none;
-        }
-        #noteCard {
-            display: none;
-            text-align: left;
-            max-height: 85vh;
-            overflow-y: auto;
-        }
-        #exitCard {
-            display: none;
-        }
-        #noteCard::-webkit-scrollbar {
-            width: 6px;
-        }
-        #noteCard::-webkit-scrollbar-thumb {
-            background: rgba(255, 107, 129, 0.3);
-            border-radius: 10px;
-        }
-        .note-header {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            color: #ffb3c1;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        .note-content p {
-            font-size: 0.98rem;
-            line-height: 1.85;
-            color: #e0e0e6;
-            font-weight: 300;
-            margin-bottom: 18px;
-        }
-        .note-content p:last-child {
-            margin-bottom: 0;
-        }
-        .note-footer {
-            text-align: right;
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            color: #a0a0ab;
-            margin-top: 25px;
-            padding-top: 15px;
-            border-top: 1px solid rgba(255,255,255,0.1);
         }
     </style>
 </head>
@@ -173,125 +120,42 @@
         <p class="subtitle" style="color:#a0a0ab;">Devam etmek için lütfen isim ve soyisminizi eksiksiz girin.</p>
         <input type="text" id="fullName" placeholder="Adınız ve Soyadınız" autocomplete="off">
         <button onclick="checkAccess()">Giriş Yap</button>
-        <div class="error-message" id="errorMsg">Bu alan sadece özel bir erişime açıktır. Lütfen adınızı ve soyadınızı eksiksiz girdiğinizden emin olun.</div>
+        <div class="error-message" id="errorMsg">Bu alana erişim kısıtlıdır. Lütfen adınızı ve soyadınızı eksiksiz girdiğinizden emin olun.</div>
     </div>
 
-    <!-- 2. Aşama: Özel Karşılama Kartı -->
-    <div class="card" id="step2Card">
-        <h2>Hoş Geldin</h2>
-        <p class="subtitle">
-            Sayfama hoş geldin Nehir 🙂<br><br>
-            Sana küçük bir konuşma hazırladım. Okumak istersen ilerle.<br><br>
-            <i>Bir tarafım ilerlemeni istese de bir tarafım gerçek duygularımı öğrenmeni istemiyor.</i>
+    <!-- 2. Aşama: Elif Tuğçe Karşılama Kartı -->
+    <div class="card" id="elifStep1Card">
+        <h2>Selam!</h2>
+        <p class="subtitle" style="font-size: 1.2rem; color: #fff; font-weight: 400; margin-bottom: 25px;">
+            Hoşgeldin azlan gardasim
         </p>
-        <div class="btn-group">
-            <button class="btn-secondary" onclick="showExit()">Çık</button>
-            <button onclick="showNote()">İlerle</button>
-        </div>
+        <button onclick="showElifStep2()">Devam Et</button>
     </div>
 
-    <!-- 3. Aşama: Aşk Notu Kartı -->
-    <div class="card" id="noteCard">
-        <div class="note-header">Nehir,</div>
-        <div class="note-content">
-            <p>Nehir, sana bunları hiçbir zaman anlatamadım. Belki anlatmaya cesaret edemedim, belki de bazı şeylerin söylenmeden kalmasının daha doğru olduğunu düşündüm. Ama yıllardır içimde taşıdığım bir şeyi ilk defa kelimelere dökmek istiyorum.</p>
-            
-            <p>Seni ilk gördüğüm günü hatırlıyorum. Daha okul başlamamıştı, ben yeni kayıt olmuştum. Kıyafet almak için okula gelmiştik. Deneme kabininden çıktığımda seni gördüm. Garip olan şu ki, o gün yüzüne bile doğru dürüst bakmadım. Ama içimde bir şey oldu. Ne olduğunu anlayamadım. Aşk değildi, hoşlantı değildi. Sadece tarif edemediğim bir histi.</p>
-            
-            <p>Sonra okul başladı. Seni koridorlarda, yemekhanede, bazen sadece uzaktan görmeye başladım. Ve fark etmeden sana bağlandım. Bir süre sonra seni gördüğüm her yerde içimde bir şey değişmeye başladı. Sana bakıyordum. Bazen senin de bana baktığını düşünüyordum. Belki gerçekten bakıyordun, belki ben görmek istediğim şeyi görüyordum. Bilmiyorum.</p>
-            
-            <p>Ama ben o küçük şeylere çok büyük anlamlar yükledim.</p>
-            
-            <p>Kendi kendime “O da benden hoşlanıyor olabilir” dedim. Çünkü ilk defa birini bu kadar saf, bu kadar düşünmeden sevmiştim. Sana nasıl yaklaşacağımı bile bilmiyordum. Bir insanı bu kadar severken gidip “Senden hoşlanıyorum” demek bana dünyanın en zor şeyi gibi geliyordu.</p>
-            
-            <p>Sonra bir gün babam aradı ve bana “Nehir Oflaz'ı tanıyor musun?” dedi.</p>
-            
-            <p>Senin adını babamdan duymam bile bana inanılmaz gelmişti. O an gerçekten kendi kendime “Galiba bu kız benim kaderim” dedim. Şimdi düşününce belki çok saçma geliyor ama o zaman benim için öyle değildi. Çünkü zaten seni hayatımda olacak biri gibi görmeye başlamıştım.</p>
-            
-            <p>Ben aslında sadece sana âşık olmadım.</p>
-            
-            <p>Seninle yaşayacağımı düşündüğüm hayata âşık oldum.</p>
-            
-            <p>Seni kafamda öyle güzel bir yere koydum ki, seninle konuşmadığım hâlde seninle ilgili hayaller kurmaya başladım. Nasıl konuşacağımızı, nasıl tanışacağımızı, belki bir gün birbirimizi gerçekten seveceğimizi düşündüm. Sen bunların hiçbirini bilmiyordun. Ben ise içimde bunların hepsini yaşıyordum.</p>
-            
-            <p>Sonra kendime bir söz verdim. Ne olursa olsun sana açılacaktım.</p>
-            
-            <p>Ama olmadı.</p>
-            
-            <p>Bir gün sınıftan çıktım ve seni başka biriyle gördüm.</p>
-            
-            <p>Seni öylece izledim. Dakikalarca. Ne bir yere oturdum ne de saklandım. Koridorun bir ucundan diğer ucuna kadar öylece baktım. İkiniz de beni fark etmediniz. Sonra hiçbir şey söylemeden oradan ayrıldım.</p>
-            
-            <p>O gün içimde bir şey kırıldı.</p>
-            
-            <p>Ama hemen kabullenemedim.</p>
-            
-            <p>Yaklaşık bir ay boyunca kendimi kandırdım. “Sevgilisi değildir.” dedim. “Belki kuzenidir. Belki arkadaşıdır.” dedim. Çünkü gerçeği kabul etmek istemiyordum. İnsan bazen gerçeği bilmediği için değil, bildiği gerçeği kabul etmek istemediği için umut ediyor.</p>
-            
-            <p>Sonunda korktuğum şeyin gerçek olduğunu anladım.</p>
-            
-            <p>Ve en kötüsü de şu oldu: Seni sevmeyi yine de bırakamadım.</p>
-            
-            <p>Çünkü ben seni sadece hayatımda olan bir insan olarak sevmedim. Seni, hayatımda olabilecek bir insan olarak sevdim. Seninle hiç yaşanmamış şeyleri bile özledim.</p>
-            
-            <p>Belki bunun en garip tarafı da bu.</p>
-            
-            <p>Sen benimle hiçbir şey yaşamadın. Ama ben seninle bir sürü şey yaşadım. Kendi içimde. Kendi hayallerimde. Kendi geleceğimde.</p>
-            
-            <p>Sen belki benim için sadece okulda gördüğün biriydin.</p>
-            
-            <p>Benim içinse sen, uzun zamandır kurduğum hayallerin içinde bir yer edindin.</p>
-            
-            <p>Ve yıllar geçtiği hâlde seni unutamamamın sebebi belki de bu.</p>
-            
-            <p>Ben sadece seni kaybetmedim.</p>
-            
-            <p>Hiç sahip olmadığım bir geleceği de kaybetmiş gibi oldum.</p>
-            
-            <p>Biliyorum, senin bir hayatın var. Buna saygı duyuyorum. Senden hiçbir şey beklemiyorum. Belki bunları hiçbir zaman duymayacaksın bile.</p>
-            
-            <p>Ama şunu bilmeni isterdim:</p>
-            
-            <p>Ben seni hiçbir zaman kötü bir şey için sevmedim. Senden bir şey almak için de sevmedim. Sadece seni çok temiz bir yerden sevdim.</p>
-            
-            <p>Belki sen bunu hiç fark etmedin.</p>
-            
-            <p>Belki de hiçbir zaman fark etmeyeceksin.</p>
-            
-            <p>Ama ben seni, hayatımın bir döneminde karşıma çıkmış güzel bir insan olarak değil...</p>
-            
-            <p>Bir gün gerçekten yaşayabileceğime inandığım hayatın kendisi olarak sevdim.</p>
-        </div>
-        <div class="note-footer">
-            Her zaman senin için en güzelini dileyen biri...
-        </div>
-    </div>
-
-    <!-- Çıkış Kartı -->
-    <div class="card" id="exitCard">
-        <h2>Kararına Saygı Duyuyorum</h2>
-        <p class="subtitle">Her şey için teşekkür ederim. Kendine çok iyi bak...</p>
+    <!-- 3. Aşama: Elif Tuğçe Mesaj Kartı -->
+    <div class="card" id="elifStep2Card">
+        <h2>Not</h2>
+        <p class="subtitle" style="font-size: 1rem; color: #e0e0e6; font-weight: 300; line-height: 1.7; text-align: left;">
+            İşte böyle birine bir not yazmıştım. Bu sayfanın içine seveceğim söveceğim kim varsa yazıp biyografime atacağım galiba.
+        </p>
     </div>
 
     <script>
         function checkAccess() {
             const val = document.getElementById('fullName').value.trim().toLowerCase().replace(/\s+/g, ' ');
-            if (val === 'nehir oflaz') {
+            
+            if (val === 'elif tuğçe erkenekli' || val === 'elif tugce erkenekli') {
                 document.getElementById('loginCard').style.display = 'none';
-                document.getElementById('step2Card').style.display = 'block';
+                document.getElementById('errorMsg').style.display = 'none';
+                document.getElementById('elifStep1Card').style.display = 'block';
             } else {
                 document.getElementById('errorMsg').style.display = 'block';
             }
         }
 
-        function showNote() {
-            document.getElementById('step2Card').style.display = 'none';
-            document.getElementById('noteCard').style.display = 'block';
-        }
-
-        function showExit() {
-            document.getElementById('step2Card').style.display = 'none';
-            document.getElementById('exitCard').style.display = 'block';
+        function showElifStep2() {
+            document.getElementById('elifStep1Card').style.display = 'none';
+            document.getElementById('elifStep2Card').style.display = 'block';
         }
 
         document.getElementById('fullName').addEventListener('keypress', function (e) {
